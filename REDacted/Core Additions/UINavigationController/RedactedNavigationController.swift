@@ -12,9 +12,16 @@ class RedactedNavigationController: UINavigationController {
     
     lazy var activityIndicatorView: RedactedNavigationActivityView = UIView.fromNib()
     
+    let apiClient = RedApiClient()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.isHidden = true
+        
+        apiClient.requestindex { result in
+            guard let result = result else { return }
+            
+            UserDefaults.standard.set(result.userId, forKey: "userId")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,8 +33,10 @@ class RedactedNavigationController: UINavigationController {
         print(self.view.subviews.count)
         if activityIndicatorView.activityIndicator.isAnimating {
             UIView.animate(withDuration: 0.3) {
+                if string.isEmpty { return }
                 self.activityIndicatorView.activityStatusLabel.text = string
-                self.activityIndicatorView.activityStatusLabel.isHidden = true
+                self.activityIndicatorView.activityStatusLabel.isHidden = false
+                
             }
             return
         }

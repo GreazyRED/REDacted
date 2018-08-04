@@ -13,13 +13,23 @@
 		CE1AE90D2100117300E71375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1AE90B2100117300E71375 /* Main.storyboard */; };
 		CE1AE90F2100117300E71375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1AE90E2100117300E71375 /* Assets.xcassets */; };
 		CE1AE9122100117300E71375 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1AE9102100117300E71375 /* LaunchScreen.storyboard */; };
+		CE2EED5921096F86003A5FF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EED5821096F86003A5FF6 /* HomeViewController.swift */; };
 		CE38BC50210255B20036E9E5 /* RedactedNavigationActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38BC4F210255B10036E9E5 /* RedactedNavigationActivityView.xib */; };
 		CE38BC5221025B370036E9E5 /* RedactedNavigationActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38BC5121025B370036E9E5 /* RedactedNavigationActivityView.swift */; };
 		CE38BC552102606C0036E9E5 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38BC542102606C0036E9E5 /* UIViewExtensions.swift */; };
 		CE38BC5C2102A8C90036E9E5 /* LoginConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38BC5B2102A8C90036E9E5 /* LoginConstants.swift */; };
 		CE38BC5F210436020036E9E5 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38BC5E210436020036E9E5 /* UIViewControllerExtensions.swift */; };
 		CE6AC1B22102342B0001A4C3 /* RedactedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AC1B12102342B0001A4C3 /* RedactedNavigationController.swift */; };
-		CEB929A521005DB400B9D657 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB929A421005DB400B9D657 /* UserViewController.swift */; };
+		CEBB082D210FF8030060DF20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082C210FF8030060DF20 /* ProfileViewController.swift */; };
+		CEBB0831210FFE490060DF20 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */; };
+		CEBB0833211001820060DF20 /* GazelleIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0832211001820060DF20 /* GazelleIndex.swift */; };
+		CEBB0835211006130060DF20 /* GazelleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0834211006130060DF20 /* GazelleUser.swift */; };
+		CEBB0838211012620060DF20 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0837211012620060DF20 /* ProfileViewModel.swift */; };
+		CEC2059D210D0B020084430B /* Annoucements.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2059C210D0B020084430B /* Annoucements.swift */; };
+		CEC205A0210D0FE70084430B /* BaseAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC2059F210D0FE70084430B /* BaseAPIResponse.swift */; };
+		CEC205A2210D16980084430B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A1210D16980084430B /* Networking.swift */; };
+		CEC205A4210D635E0084430B /* RedApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A3210D635E0084430B /* RedApiClient.swift */; };
+		CEC205A6210D8F5C0084430B /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A5210D8F5C0084430B /* AnnouncementTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,13 +42,23 @@
 		CE1AE90E2100117300E71375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1AE9112100117300E71375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1AE9132100117300E71375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE2EED5821096F86003A5FF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE38BC4F210255B10036E9E5 /* RedactedNavigationActivityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedactedNavigationActivityView.xib; sourceTree = "<group>"; };
 		CE38BC5121025B370036E9E5 /* RedactedNavigationActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedNavigationActivityView.swift; sourceTree = "<group>"; };
 		CE38BC542102606C0036E9E5 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		CE38BC5B2102A8C90036E9E5 /* LoginConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConstants.swift; sourceTree = "<group>"; };
 		CE38BC5E210436020036E9E5 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		CE6AC1B12102342B0001A4C3 /* RedactedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedNavigationController.swift; sourceTree = "<group>"; };
-		CEB929A421005DB400B9D657 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		CEBB082C210FF8030060DF20 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		CEBB0832211001820060DF20 /* GazelleIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazelleIndex.swift; sourceTree = "<group>"; };
+		CEBB0834211006130060DF20 /* GazelleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazelleUser.swift; sourceTree = "<group>"; };
+		CEBB0837211012620060DF20 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		CEC2059C210D0B020084430B /* Annoucements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annoucements.swift; sourceTree = "<group>"; };
+		CEC2059F210D0FE70084430B /* BaseAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIResponse.swift; sourceTree = "<group>"; };
+		CEC205A1210D16980084430B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		CEC205A3210D635E0084430B /* RedApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedApiClient.swift; sourceTree = "<group>"; };
+		CEC205A5210D8F5C0084430B /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
 		E9C7FC87A772EEA52CF63294 /* Pods-REDacted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REDacted.release.xcconfig"; path = "Pods/Target Support Files/Pods-REDacted/Pods-REDacted.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +122,32 @@
 			path = REDacted;
 			sourceTree = "<group>";
 		};
+		CE2EED5521096F1A003A5FF6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2059B210D0ABF0084430B /* Models */,
+				CE2EED5721096F52003A5FF6 /* Views */,
+				CE2EED5621096F26003A5FF6 /* Controllers */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CE2EED5621096F26003A5FF6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE2EED5821096F86003A5FF6 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE2EED5721096F52003A5FF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEC205A5210D8F5C0084430B /* AnnouncementTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE38BC532102604C0036E9E5 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +175,8 @@
 		CE3CCACA2102293600DB5F45 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CEB929A421005DB400B9D657 /* UserViewController.swift */,
+				CEBB082A210FF7840060DF20 /* Profile */,
+				CE2EED5521096F1A003A5FF6 /* Home */,
 				CE3CCACB2102294400DB5F45 /* Login */,
 			);
 			path = Modules;
@@ -180,6 +227,7 @@
 		CE6AC1AF210233DB0001A4C3 /* Core Additions */ = {
 			isa = PBXGroup;
 			children = (
+				CEC2059E210D0F9B0084430B /* Networking */,
 				CE38BC5D210435EC0036E9E5 /* UIViewController */,
 				CE6AC1B0210233E70001A4C3 /* UINavigationController */,
 				CE38BC532102604C0036E9E5 /* UIView */,
@@ -195,6 +243,68 @@
 				CE38BC5121025B370036E9E5 /* RedactedNavigationActivityView.swift */,
 			);
 			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		CEBB082A210FF7840060DF20 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0836211012320060DF20 /* View Models */,
+				CEBB082F210FFE250060DF20 /* Models */,
+				CEBB082E210FFD740060DF20 /* Views */,
+				CEBB082B210FF78F0060DF20 /* Controllers */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CEBB082B210FF78F0060DF20 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB082C210FF8030060DF20 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CEBB082E210FFD740060DF20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEBB082F210FFE250060DF20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0832211001820060DF20 /* GazelleIndex.swift */,
+				CEBB0834211006130060DF20 /* GazelleUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEBB0836211012320060DF20 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEBB0837211012620060DF20 /* ProfileViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		CEC2059B210D0ABF0084430B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2059C210D0B020084430B /* Annoucements.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEC2059E210D0F9B0084430B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2059F210D0FE70084430B /* BaseAPIResponse.swift */,
+				CEC205A1210D16980084430B /* Networking.swift */,
+				CEC205A3210D635E0084430B /* RedApiClient.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,11 +403,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-REDacted/Pods-REDacted-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Kanna/Kanna.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kanna.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,12 +425,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE38BC5F210436020036E9E5 /* UIViewControllerExtensions.swift in Sources */,
+				CEBB0838211012620060DF20 /* ProfileViewModel.swift in Sources */,
+				CEC205A4210D635E0084430B /* RedApiClient.swift in Sources */,
+				CEBB0833211001820060DF20 /* GazelleIndex.swift in Sources */,
 				CE38BC5221025B370036E9E5 /* RedactedNavigationActivityView.swift in Sources */,
 				CE1AE90A2100117300E71375 /* LoginViewController.swift in Sources */,
+				CEC205A2210D16980084430B /* Networking.swift in Sources */,
 				CE6AC1B22102342B0001A4C3 /* RedactedNavigationController.swift in Sources */,
-				CEB929A521005DB400B9D657 /* UserViewController.swift in Sources */,
+				CEBB0835211006130060DF20 /* GazelleUser.swift in Sources */,
+				CEC205A0210D0FE70084430B /* BaseAPIResponse.swift in Sources */,
+				CEC2059D210D0B020084430B /* Annoucements.swift in Sources */,
+				CEBB0831210FFE490060DF20 /* ProfileTableViewCell.swift in Sources */,
+				CE2EED5921096F86003A5FF6 /* HomeViewController.swift in Sources */,
 				CE38BC552102606C0036E9E5 /* UIViewExtensions.swift in Sources */,
 				CE1AE9082100117300E71375 /* AppDelegate.swift in Sources */,
+				CEBB082D210FF8030060DF20 /* ProfileViewController.swift in Sources */,
+				CEC205A6210D8F5C0084430B /* AnnouncementTableViewCell.swift in Sources */,
 				CE38BC5C2102A8C90036E9E5 /* LoginConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

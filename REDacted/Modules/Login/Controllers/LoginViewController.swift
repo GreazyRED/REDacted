@@ -90,7 +90,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.showIndicator(withMessage: "Attempting to Login")
         checkLoggedInStatus()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardNotification(notification:)),
@@ -124,6 +123,7 @@ class LoginViewController: UIViewController {
     }
     
     func checkLoggedInStatus() {
+        activityIndicator.showIndicator(withMessage: "Loading")
         webView = UIWebView(frame: .zero)
         webView.delegate = self
         webView.loadRequest(URLRequest(url: URL(string: "https://redacted.ch/ajax.php?action=index")!))
@@ -167,16 +167,19 @@ class LoginViewController: UIViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         let okAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.activityIndicator.showIndicator(withMessage: "Submitting 2-Factor Code")
             self.webView.stringByEvaluatingJavaScript(from: "document.getElementsByName(\"qrcode_confirm\")[0].value = \(self.twoFactorCode)")
             self.webView.stringByEvaluatingJavaScript(from: "document.getElementsByName(\"logmein\")[0].click()")
         }
         okAction.isEnabled = false
         googleAlertController.addAction(cancelAction)
         googleAlertController.addAction(okAction)
+        //activityIndicator.stopIndicator()
         present(googleAlertController, animated: true, completion: nil)
     }
     
     func triggerLogin() {
+        activityIndicator.showIndicator(withMessage: "Logging In")
         webView.stringByEvaluatingJavaScript(from: "\(WebViewConstants.setUserName)\"\(usernameTextField.text!)\"")
         webView.stringByEvaluatingJavaScript(from: "\(WebViewConstants.setPassword)\"\(passwordTextField.text!)\"")
         if let status = webView.stringByEvaluatingJavaScript(from: WebViewConstants.getRememberMeStatus), status == "false" {
@@ -217,9 +220,10 @@ class LoginViewController: UIViewController {
     }
     
     func gotoUserPage() {
+        activityIndicator.showIndicator(withMessage: "Login Successful")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "UserView")
-        present(controller, animated: true, completion: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "TabBar")
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     fileprivate func cleanString(withText text: String?) -> String {
@@ -238,7 +242,7 @@ extension LoginViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         let url = webView.request?.url?.absoluteString ?? ""
         checkState(withUrl: url)
-        print("didFinish: \(url)")
+        //print("didFinish: \(url)")
     }
 
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
@@ -251,19 +255,13 @@ extension LoginViewController: UIWebViewDelegate {
         switch loginState {
         case .checkIfAuthenticated:
             
-            //theory that if a user is authenticated the index API will be returned back
+            //theory that if a user is authenticated the index API data will be returned back
             if url == WebViewConstants.indexData { gotoUserPage() }
-            
-            //if the authentication check for the user returns the login page
-            //we need to prepare the screen for login
-            if url == WebViewConstants.loginPage { loginState = .needsAuthentication }
-
             
             if let attemptsLeft = webView.stringByEvaluatingJavaScript(from: WebViewConstants.getAttemptsLeft), !attemptsLeft.isEmpty {
                 print(webView.stringByEvaluatingJavaScript(from: WebViewConstants.getHTML)!)
                 print(attemptsLeft)
                 updateMessages(withText: attemptsLeft, withType: .attempts)
-                break
             }
             
             //a check is made to see if the user is banned from loggin in and
@@ -271,12 +269,17 @@ extension LoginViewController: UIWebViewDelegate {
             //there is no way to send crendentials
             checkForBans()
             
+            //if the authentication check for the user returns the login page
+            //we need to prepare the screen for login
+            if url == WebViewConstants.loginPage { loginState = .needsAuthentication }
+            activityIndicator.stopIndicator()
         case .needsAuthentication:
             //The user does not have 2FA enabled
-            if url == WebViewConstants.indexPage { print("push to main page") }
+            if url == WebViewConstants.indexPage { self.gotoUserPage() }
             
             //The user attempted to authenticate
             if url == WebViewConstants.loginPage {
+                activityIndicator.stopIndicator()
                 //The user has 2FA enabbled
                 if let twoFactor = webView.stringByEvaluatingJavaScript(from: WebViewConstants.getQRCode), !twoFactor.isEmpty {
                     loginState = .needs2FA
@@ -293,6 +296,7 @@ extension LoginViewController: UIWebViewDelegate {
                 }
                 checkForBans()
                 
+                
             }
         case .needs2FA:
             if webView.request?.url?.absoluteString == "https://redacted.ch/ajax.php?action=index" {
@@ -305,7 +309,7 @@ extension LoginViewController: UIWebViewDelegate {
         default:
             break
         }
-        activityIndicator.stopIndicator()
+        //activityIndicator.stopIndicator()
     }
     
     fileprivate func updateMessages(withText text: String, withType type: MessageType) {
