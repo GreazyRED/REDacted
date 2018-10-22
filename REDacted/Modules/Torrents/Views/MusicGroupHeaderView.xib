@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="MusicGroup" id="iN0-l3-epB" customClass="MusicGroupHeaderView" customModule="REDacted" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFJ-nC-3oq">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FfX-4c-pl9">
+                    <rect key="frame" x="16" y="8" width="343" height="50"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1fa-2g-2G6">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="TIa-PJ-Lxj"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mq4-e9-LbF">
+                            <rect key="frame" x="58" y="0.0" width="285" height="50"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="o2k-X9-rI3">
+                                    <rect key="frame" x="0.0" y="0.0" width="285" height="27"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEJ-jl-pda">
+                                            <rect key="frame" x="0.0" y="0.0" width="31" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <state key="normal" title="Artist"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAi-Oh-7ex">
+                                            <rect key="frame" x="33" y="0.0" width="8" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8x-vV-e7m">
+                                            <rect key="frame" x="43" y="0.0" width="36" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <state key="normal" title="Album"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="[Year] + [Release Type]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS3-s4-7nf">
+                                            <rect key="frame" x="81" y="0.0" width="204" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjS-wK-OzG">
+                                    <rect key="frame" x="0.0" y="27" width="285" height="23"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="HDt-CI-x5f"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FfX-4c-pl9" secondAttribute="trailing" constant="16" id="IRJ-bq-wfS"/>
+                <constraint firstItem="FfX-4c-pl9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Pvp-c3-kMq"/>
+                <constraint firstItem="AFJ-nC-3oq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UZI-y1-bsv"/>
+                <constraint firstAttribute="bottom" secondItem="AFJ-nC-3oq" secondAttribute="bottom" id="ax8-Ro-zDP"/>
+                <constraint firstItem="FfX-4c-pl9" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="mEa-gl-1Ii"/>
+                <constraint firstItem="AFJ-nC-3oq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="n2z-z6-lgG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FfX-4c-pl9" secondAttribute="bottom" constant="8" id="nZz-0z-1uE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AFJ-nC-3oq" secondAttribute="trailing" id="rYi-WQ-CHW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="album" destination="K8x-vV-e7m" id="Spq-9N-Asr"/>
+                <outlet property="artist" destination="PEJ-jl-pda" id="eEH-hY-Fd8"/>
+                <outlet property="cover" destination="1fa-2g-2G6" id="f4q-3y-CI3"/>
+                <outlet property="tags" destination="XjS-wK-OzG" id="iaH-4h-1YP"/>
+                <outlet property="yearAndReleaseLabel" destination="lS3-s4-7nf" id="gau-E2-iLS"/>
+            </connections>
+        </view>
+    </objects>
+</document>

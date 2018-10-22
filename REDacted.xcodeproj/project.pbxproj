@@ -19,7 +19,11 @@
 		CE38BC552102606C0036E9E5 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38BC542102606C0036E9E5 /* UIViewExtensions.swift */; };
 		CE38BC5C2102A8C90036E9E5 /* LoginConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38BC5B2102A8C90036E9E5 /* LoginConstants.swift */; };
 		CE38BC5F210436020036E9E5 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38BC5E210436020036E9E5 /* UIViewControllerExtensions.swift */; };
+		CE3B7E3121782DD20008C893 /* Top10TorrentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B7E3021782DD20008C893 /* Top10TorrentViewModel.swift */; };
+		CE3E74262116CE98006BD188 /* MusicGroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3E74252116CE98006BD188 /* MusicGroupHeaderView.xib */; };
+		CE3E74282116CF06006BD188 /* MusicGroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E74272116CF06006BD188 /* MusicGroupHeaderView.swift */; };
 		CE6AC1B22102342B0001A4C3 /* RedactedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AC1B12102342B0001A4C3 /* RedactedNavigationController.swift */; };
+		CE903297211689BD006AA7AC /* MusicTorrentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE903296211689BD006AA7AC /* MusicTorrentsViewModel.swift */; };
 		CEBB082D210FF8030060DF20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082C210FF8030060DF20 /* ProfileViewController.swift */; };
 		CEBB0831210FFE490060DF20 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */; };
 		CEBB0833211001820060DF20 /* GazelleIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0832211001820060DF20 /* GazelleIndex.swift */; };
@@ -30,6 +34,17 @@
 		CEC205A2210D16980084430B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A1210D16980084430B /* Networking.swift */; };
 		CEC205A4210D635E0084430B /* RedApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A3210D635E0084430B /* RedApiClient.swift */; };
 		CEC205A6210D8F5C0084430B /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A5210D8F5C0084430B /* AnnouncementTableViewCell.swift */; };
+		CEF2E110211936750009B4D4 /* AlbumGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E10F211936750009B4D4 /* AlbumGroupTableViewCell.swift */; };
+		CEF2E11221193B430009B4D4 /* AlbumGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E11121193B430009B4D4 /* AlbumGroupViewModel.swift */; };
+		CEF2E114211E74230009B4D4 /* TorrentGroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E113211E74230009B4D4 /* TorrentGroupDetailViewController.swift */; };
+		CEF2E116211F3C800009B4D4 /* TorrentGroupDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E115211F3C800009B4D4 /* TorrentGroupDetailModel.swift */; };
+		CEF2E118211F628F0009B4D4 /* TorrentDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E117211F628F0009B4D4 /* TorrentDetailTableViewCell.swift */; };
+		CEF2E11A211F66F40009B4D4 /* TorrentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E119211F66F40009B4D4 /* TorrentDetailViewModel.swift */; };
+		CEF2E11C212525D70009B4D4 /* SimpleSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF2E11B212525D70009B4D4 /* SimpleSectionHeader.xib */; };
+		CEF2E11E212538750009B4D4 /* SimpleSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E11D212538750009B4D4 /* SimpleSectionHeader.swift */; };
+		CEFC8940211661F5004D56F3 /* TorrentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC893F211661F5004D56F3 /* TorrentModels.swift */; };
+		CEFC89422116755D004D56F3 /* TorrentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC89412116755D004D56F3 /* TorrentsViewController.swift */; };
+		CEFC894421167612004D56F3 /* TorrentMusicGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFC894321167612004D56F3 /* TorrentMusicGroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +63,11 @@
 		CE38BC542102606C0036E9E5 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		CE38BC5B2102A8C90036E9E5 /* LoginConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConstants.swift; sourceTree = "<group>"; };
 		CE38BC5E210436020036E9E5 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		CE3B7E3021782DD20008C893 /* Top10TorrentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10TorrentViewModel.swift; sourceTree = "<group>"; };
+		CE3E74252116CE98006BD188 /* MusicGroupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicGroupHeaderView.xib; sourceTree = "<group>"; };
+		CE3E74272116CF06006BD188 /* MusicGroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGroupHeaderView.swift; sourceTree = "<group>"; };
 		CE6AC1B12102342B0001A4C3 /* RedactedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedNavigationController.swift; sourceTree = "<group>"; };
+		CE903296211689BD006AA7AC /* MusicTorrentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTorrentsViewModel.swift; sourceTree = "<group>"; };
 		CEBB082C210FF8030060DF20 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CEBB0832211001820060DF20 /* GazelleIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazelleIndex.swift; sourceTree = "<group>"; };
@@ -59,6 +78,17 @@
 		CEC205A1210D16980084430B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		CEC205A3210D635E0084430B /* RedApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedApiClient.swift; sourceTree = "<group>"; };
 		CEC205A5210D8F5C0084430B /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
+		CEF2E10F211936750009B4D4 /* AlbumGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumGroupTableViewCell.swift; sourceTree = "<group>"; };
+		CEF2E11121193B430009B4D4 /* AlbumGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumGroupViewModel.swift; sourceTree = "<group>"; };
+		CEF2E113211E74230009B4D4 /* TorrentGroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentGroupDetailViewController.swift; sourceTree = "<group>"; };
+		CEF2E115211F3C800009B4D4 /* TorrentGroupDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentGroupDetailModel.swift; sourceTree = "<group>"; };
+		CEF2E117211F628F0009B4D4 /* TorrentDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentDetailTableViewCell.swift; sourceTree = "<group>"; };
+		CEF2E119211F66F40009B4D4 /* TorrentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentDetailViewModel.swift; sourceTree = "<group>"; };
+		CEF2E11B212525D70009B4D4 /* SimpleSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleSectionHeader.xib; sourceTree = "<group>"; };
+		CEF2E11D212538750009B4D4 /* SimpleSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSectionHeader.swift; sourceTree = "<group>"; };
+		CEFC893F211661F5004D56F3 /* TorrentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentModels.swift; sourceTree = "<group>"; };
+		CEFC89412116755D004D56F3 /* TorrentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentsViewController.swift; sourceTree = "<group>"; };
+		CEFC894321167612004D56F3 /* TorrentMusicGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentMusicGroupTableViewCell.swift; sourceTree = "<group>"; };
 		E9C7FC87A772EEA52CF63294 /* Pods-REDacted.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-REDacted.release.xcconfig"; path = "Pods/Target Support Files/Pods-REDacted/Pods-REDacted.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +205,7 @@
 		CE3CCACA2102293600DB5F45 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CEFC893B2115F086004D56F3 /* Torrents */,
 				CEBB082A210FF7840060DF20 /* Profile */,
 				CE2EED5521096F1A003A5FF6 /* Home */,
 				CE3CCACB2102294400DB5F45 /* Login */,
@@ -245,6 +276,17 @@
 			path = UINavigationController;
 			sourceTree = "<group>";
 		};
+		CE9032952116899C006AA7AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE903296211689BD006AA7AC /* MusicTorrentsViewModel.swift */,
+				CEF2E11121193B430009B4D4 /* AlbumGroupViewModel.swift */,
+				CEF2E119211F66F40009B4D4 /* TorrentDetailViewModel.swift */,
+				CE3B7E3021782DD20008C893 /* Top10TorrentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CEBB082A210FF7840060DF20 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +349,49 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		CEFC893B2115F086004D56F3 /* Torrents */ = {
+			isa = PBXGroup;
+			children = (
+				CE9032952116899C006AA7AC /* ViewModel */,
+				CEFC893E2115F09A004D56F3 /* Views */,
+				CEFC893D2115F094004D56F3 /* Models */,
+				CEFC893C2115F08F004D56F3 /* Controllers */,
+			);
+			path = Torrents;
+			sourceTree = "<group>";
+		};
+		CEFC893C2115F08F004D56F3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEFC89412116755D004D56F3 /* TorrentsViewController.swift */,
+				CEF2E113211E74230009B4D4 /* TorrentGroupDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CEFC893D2115F094004D56F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEFC893F211661F5004D56F3 /* TorrentModels.swift */,
+				CEF2E115211F3C800009B4D4 /* TorrentGroupDetailModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEFC893E2115F09A004D56F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEFC894321167612004D56F3 /* TorrentMusicGroupTableViewCell.swift */,
+				CE3E74252116CE98006BD188 /* MusicGroupHeaderView.xib */,
+				CE3E74272116CF06006BD188 /* MusicGroupHeaderView.swift */,
+				CEF2E10F211936750009B4D4 /* AlbumGroupTableViewCell.swift */,
+				CEF2E117211F628F0009B4D4 /* TorrentDetailTableViewCell.swift */,
+				CEF2E11B212525D70009B4D4 /* SimpleSectionHeader.xib */,
+				CEF2E11D212538750009B4D4 /* SimpleSectionHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,6 +426,7 @@
 				TargetAttributes = {
 					CE1AE9032100117300E71375 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -367,6 +453,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF2E11C212525D70009B4D4 /* SimpleSectionHeader.xib in Resources */,
+				CE3E74262116CE98006BD188 /* MusicGroupHeaderView.xib in Resources */,
 				CE1AE9122100117300E71375 /* LaunchScreen.storyboard in Resources */,
 				CE1AE90F2100117300E71375 /* Assets.xcassets in Resources */,
 				CE1AE90D2100117300E71375 /* Main.storyboard in Resources */,
@@ -426,22 +514,35 @@
 			files = (
 				CE38BC5F210436020036E9E5 /* UIViewControllerExtensions.swift in Sources */,
 				CEBB0838211012620060DF20 /* ProfileViewModel.swift in Sources */,
+				CE3E74282116CF06006BD188 /* MusicGroupHeaderView.swift in Sources */,
 				CEC205A4210D635E0084430B /* RedApiClient.swift in Sources */,
 				CEBB0833211001820060DF20 /* GazelleIndex.swift in Sources */,
+				CEFC894421167612004D56F3 /* TorrentMusicGroupTableViewCell.swift in Sources */,
+				CEF2E118211F628F0009B4D4 /* TorrentDetailTableViewCell.swift in Sources */,
 				CE38BC5221025B370036E9E5 /* RedactedNavigationActivityView.swift in Sources */,
 				CE1AE90A2100117300E71375 /* LoginViewController.swift in Sources */,
 				CEC205A2210D16980084430B /* Networking.swift in Sources */,
+				CEF2E110211936750009B4D4 /* AlbumGroupTableViewCell.swift in Sources */,
 				CE6AC1B22102342B0001A4C3 /* RedactedNavigationController.swift in Sources */,
+				CEFC8940211661F5004D56F3 /* TorrentModels.swift in Sources */,
+				CEF2E116211F3C800009B4D4 /* TorrentGroupDetailModel.swift in Sources */,
+				CEF2E114211E74230009B4D4 /* TorrentGroupDetailViewController.swift in Sources */,
+				CEF2E11A211F66F40009B4D4 /* TorrentDetailViewModel.swift in Sources */,
 				CEBB0835211006130060DF20 /* GazelleUser.swift in Sources */,
 				CEC205A0210D0FE70084430B /* BaseAPIResponse.swift in Sources */,
 				CEC2059D210D0B020084430B /* Annoucements.swift in Sources */,
+				CE903297211689BD006AA7AC /* MusicTorrentsViewModel.swift in Sources */,
 				CEBB0831210FFE490060DF20 /* ProfileTableViewCell.swift in Sources */,
 				CE2EED5921096F86003A5FF6 /* HomeViewController.swift in Sources */,
 				CE38BC552102606C0036E9E5 /* UIViewExtensions.swift in Sources */,
 				CE1AE9082100117300E71375 /* AppDelegate.swift in Sources */,
+				CE3B7E3121782DD20008C893 /* Top10TorrentViewModel.swift in Sources */,
+				CEF2E11E212538750009B4D4 /* SimpleSectionHeader.swift in Sources */,
 				CEBB082D210FF8030060DF20 /* ProfileViewController.swift in Sources */,
 				CEC205A6210D8F5C0084430B /* AnnouncementTableViewCell.swift in Sources */,
 				CE38BC5C2102A8C90036E9E5 /* LoginConstants.swift in Sources */,
+				CEF2E11221193B430009B4D4 /* AlbumGroupViewModel.swift in Sources */,
+				CEFC89422116755D004D56F3 /* TorrentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,13 +690,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LH2859ACX;
 				INFOPLIST_FILE = REDacted/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.redacted.REDacted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -608,13 +710,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LH2859ACX;
 				INFOPLIST_FILE = REDacted/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.redacted.REDacted;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

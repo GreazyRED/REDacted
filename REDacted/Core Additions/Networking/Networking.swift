@@ -57,11 +57,7 @@ class NetworkManager {
     static func post<T>(_ url: String, parameters: Parameters? = nil, headers: HTTPHeaders?, completionHandler: @escaping (Result<T>) -> ()) {
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
             switch response.result {
-            case .success(let value):
-//                guard let data = value as? Data else {
-//                    completionHandler(.failure(.error))
-//                    return
-//                }
+            case .success:
                 do {
                     let decoder = JSONDecoder()
                     completionHandler(.success( try decoder.decode(T.self, from: response.data!)))

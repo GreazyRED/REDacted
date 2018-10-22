@@ -93,18 +93,18 @@ class LoginViewController: UIViewController {
         checkLoggedInStatus()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardNotification(notification:)),
-                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
     }
     
     @objc func keyboardNotification(notification: NSNotification) {
         guard let userInfo = notification.userInfo,
-        let keyboard = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
-        let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return }
+        let keyboard = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+        let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return }
         print(duration)
-        let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
-        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
-        let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
         
         let buttonLocation = logInButton.convert(logInButton.frame.origin, to: nil)
         print(buttonLocation.y)
@@ -360,10 +360,10 @@ extension LoginViewController: UIWebViewDelegate {
     
     fileprivate func getAttemptsAttributedString(withText text:String) -> NSMutableAttributedString {
         let attributedText = NSMutableAttributedString()
-        let normalAttribute = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15),
-                               NSAttributedStringKey.foregroundColor: UIColor.init(red: 117/255, green: 117/255, blue: 117/255, alpha: 1)]
-        let attemptAttribute = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 15),
-                                NSAttributedStringKey.foregroundColor: UIColor.init(red: 0, green: 128/255, blue: 0, alpha: 1)]
+        let normalAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15),
+                               NSAttributedString.Key.foregroundColor: UIColor.init(red: 117/255, green: 117/255, blue: 117/255, alpha: 1)]
+        let attemptAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15),
+                                NSAttributedString.Key.foregroundColor: UIColor.init(red: 0, green: 128/255, blue: 0, alpha: 1)]
         print("# of attempts \(text)")
         attributedText.append(NSAttributedString(string: "You have ", attributes: normalAttribute))
         attributedText.append(NSAttributedString(string: text, attributes: attemptAttribute))
@@ -373,17 +373,17 @@ extension LoginViewController: UIWebViewDelegate {
     
     fileprivate func getRedAttributedString(withText text:String) -> NSMutableAttributedString {
         let attributedText = NSMutableAttributedString()
-        let redAttribute = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15),
-                            NSAttributedStringKey.foregroundColor: UIColor.init(red: 200/255, green: 0, blue: 0, alpha: 1)]
+        let redAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15),
+                            NSAttributedString.Key.foregroundColor: UIColor.init(red: 200/255, green: 0, blue: 0, alpha: 1)]
         attributedText.append(NSAttributedString(string: text, attributes: redAttribute))
         return attributedText
     }
     
     fileprivate func getWarningAttributedString() -> NSMutableAttributedString {
-        let boldNormalAttribute = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14),
-                                   NSAttributedStringKey.foregroundColor: UIColor.init(red: 200/255, green:0, blue: 0, alpha: 1)]
-        let normalAttribute = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12),
-                               NSAttributedStringKey.foregroundColor: UIColor.init(red: 117/255, green: 117/255, blue: 117/255, alpha: 1)]
+        let boldNormalAttribute = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14),
+                                   NSAttributedString.Key.foregroundColor: UIColor.init(red: 200/255, green:0, blue: 0, alpha: 1)]
+        let normalAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+                               NSAttributedString.Key.foregroundColor: UIColor.init(red: 117/255, green: 117/255, blue: 117/255, alpha: 1)]
         let attributedText = NSMutableAttributedString()
         attributedText.append(NSAttributedString(string: "\nWARNING: ", attributes: boldNormalAttribute))
         attributedText.append(NSAttributedString(string: "You will be banned for 6 hours after your login attempts run out!", attributes: normalAttribute))

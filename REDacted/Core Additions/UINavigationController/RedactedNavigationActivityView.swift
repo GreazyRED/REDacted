@@ -19,11 +19,11 @@ class RedactedNavigationActivityView: UIView {
     @IBOutlet weak var activityStatusLabel: UILabel!
     
     override func awakeFromNib() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(blurEffectView)
-        self.sendSubview(toBack: blurEffectView)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = self.bounds
+//        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        self.addSubview(blurEffectView)
+//        self.sendSubviewToBack(blurEffectView)
     }
 }
