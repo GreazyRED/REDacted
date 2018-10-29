@@ -165,7 +165,10 @@ class LoginViewController: UIViewController {
             text.addTarget(self, action: #selector(self.textFieldDidChange), for: .editingChanged)
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive) { action in
+            self.loginState = .needsAuthentication
+            self.webView.loadRequest(URLRequest(url: URL(string: "https://redacted.ch/ajax.php?action=index")!))
+        }
         let okAction = UIAlertAction(title: "OK", style: .default) { action in
             self.activityIndicator.showIndicator(withMessage: "Submitting 2-Factor Code")
             self.webView.stringByEvaluatingJavaScript(from: "document.getElementsByName(\"qrcode_confirm\")[0].value = \(self.twoFactorCode)")
@@ -256,7 +259,10 @@ extension LoginViewController: UIWebViewDelegate {
         case .checkIfAuthenticated:
             
             //theory that if a user is authenticated the index API data will be returned back
-            if url == WebViewConstants.indexData { gotoUserPage() }
+            if url == WebViewConstants.indexData {
+                gotoUserPage()
+                return
+            }
             
             if let attemptsLeft = webView.stringByEvaluatingJavaScript(from: WebViewConstants.getAttemptsLeft), !attemptsLeft.isEmpty {
                 print(webView.stringByEvaluatingJavaScript(from: WebViewConstants.getHTML)!)
@@ -275,7 +281,10 @@ extension LoginViewController: UIWebViewDelegate {
             activityIndicator.stopIndicator()
         case .needsAuthentication:
             //The user does not have 2FA enabled
-            if url == WebViewConstants.indexPage { self.gotoUserPage() }
+            if url == WebViewConstants.indexData {
+                gotoUserPage()
+                return
+            }
             
             //The user attempted to authenticate
             if url == WebViewConstants.loginPage {
@@ -301,6 +310,7 @@ extension LoginViewController: UIWebViewDelegate {
         case .needs2FA:
             if webView.request?.url?.absoluteString == "https://redacted.ch/ajax.php?action=index" {
                 gotoUserPage()
+                return
             }
             if let message = webView.stringByEvaluatingJavaScript(from: WebViewConstants.invalidToken), !message.isEmpty {
                 
