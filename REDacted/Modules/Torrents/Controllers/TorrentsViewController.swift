@@ -111,21 +111,12 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
             }
             return cell
         case TorrentSections.top10.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumGroup") as! AlbumGroupTableViewCell
-//            if !cell.uploadedByStackView.isHidden {
-//                cell.uploadedByStackView.isHidden = true
-//            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Top10Torrent") as! Top10TorrentTableViewCell
             
             guard let album = top10Groups?[indexPath.section].torrents[indexPath.row] else { return cell }
-            cell.artistName.text = album.artistName
-            cell.albumName.text = album.albumName
-            cell.releaseType.text = album.releaseType
             
-            if let url = album.cover {
-                cell.albumCover.af_setImage(withURL: url)
-            } else {
-                cell.albumCover.image = UIImage(imageLiteralResourceName: "ic_missing_artwork")
-            }
+            cell.albumName.attributedText = album.releaseFormat
+            cell.torrentSize.text = album.size
             return cell
         case TorrentSections.search.rawValue:
             print("hey where da search")
@@ -156,27 +147,19 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-        //
-        // OKAY, so maybe this object does not belong being mapped to index 1
-        // Top10 torrents should be able to be downloaded directly from this screen
-        // Since that is the case we will need to change the cell type to one that is able to be downloaded
-        // We may have to create a unique cell. Just be aware that there should be no segue and
-        // we should display all torrent meta data
-        //
-        
-        if segmentControl.selectedSegmentIndex == 1 {
-            guard let album = self.top10Groups?[indexPath.section].torrents[indexPath.row] else { return }
-            if let controller = storyboard?.instantiateViewController(withIdentifier: "TorrentGroupDetail") as? TorrentGroupDetailViewController {
-                self.activityIndicator.navigationBar.isHidden = false
-                controller.groupId = album.id
-                let backButton = UIBarButtonItem()
-                backButton.title = "Torrents"
-                activityIndicator.navigationBar.topItem?.backBarButtonItem = backButton
-                controller.navigationController?.title = "Torrent Detail"
-                self.navigationController?.pushViewController(controller, animated: true)
-                
-            }
-        }
+//        if segmentControl.selectedSegmentIndex == 1 {
+//            guard let album = self.top10Groups?[indexPath.section].torrents[indexPath.row] else { return }
+//            if let controller = storyboard?.instantiateViewController(withIdentifier: "TorrentGroupDetail") as? TorrentGroupDetailViewController {
+//                self.activityIndicator.navigationBar.isHidden = false
+//                controller.groupId = album.id
+//                let backButton = UIBarButtonItem()
+//                backButton.title = "Torrents"
+//                activityIndicator.navigationBar.topItem?.backBarButtonItem = backButton
+//                controller.navigationController?.title = "Torrent Detail"
+//                self.navigationController?.pushViewController(controller, animated: true)
+//                
+//            }
+//        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

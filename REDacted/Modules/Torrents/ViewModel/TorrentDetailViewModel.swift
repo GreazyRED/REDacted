@@ -22,7 +22,6 @@ struct TorrentDetailViewModel {
         var torrents: [TorrentViewModel] = []
         var keyArray: [String] = []
         var torrentDictionary: [String: [Torrent]] = [:]
-//        for torrent in detail.torrents.sorted(by: {$0.remasterYear < $1.remasterYear}) {
         for torrent in detail.torrents {
             let key = "\(torrent.remasterYear)" + torrent.remasterRecordLabel + torrent.remasterCatalogueNumber + torrent.remasterTitle + torrent.media
             if !keyArray.contains(key) {

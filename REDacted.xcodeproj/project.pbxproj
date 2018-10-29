@@ -34,6 +34,8 @@
 		CEC205A2210D16980084430B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A1210D16980084430B /* Networking.swift */; };
 		CEC205A4210D635E0084430B /* RedApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A3210D635E0084430B /* RedApiClient.swift */; };
 		CEC205A6210D8F5C0084430B /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC205A5210D8F5C0084430B /* AnnouncementTableViewCell.swift */; };
+		CEE4F9C52183E05E009F9DEB /* Top10TorrentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4F9C42183E05E009F9DEB /* Top10TorrentTableViewCell.swift */; };
+		CEE4F9C821841DEC009F9DEB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE4F9C721841DEC009F9DEB /* Helpers.swift */; };
 		CEF2E110211936750009B4D4 /* AlbumGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E10F211936750009B4D4 /* AlbumGroupTableViewCell.swift */; };
 		CEF2E11221193B430009B4D4 /* AlbumGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E11121193B430009B4D4 /* AlbumGroupViewModel.swift */; };
 		CEF2E114211E74230009B4D4 /* TorrentGroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2E113211E74230009B4D4 /* TorrentGroupDetailViewController.swift */; };
@@ -78,6 +80,8 @@
 		CEC205A1210D16980084430B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		CEC205A3210D635E0084430B /* RedApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedApiClient.swift; sourceTree = "<group>"; };
 		CEC205A5210D8F5C0084430B /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
+		CEE4F9C42183E05E009F9DEB /* Top10TorrentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10TorrentTableViewCell.swift; sourceTree = "<group>"; };
+		CEE4F9C721841DEC009F9DEB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		CEF2E10F211936750009B4D4 /* AlbumGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumGroupTableViewCell.swift; sourceTree = "<group>"; };
 		CEF2E11121193B430009B4D4 /* AlbumGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumGroupViewModel.swift; sourceTree = "<group>"; };
 		CEF2E113211E74230009B4D4 /* TorrentGroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentGroupDetailViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 		CE6AC1AF210233DB0001A4C3 /* Core Additions */ = {
 			isa = PBXGroup;
 			children = (
+				CEE4F9C621841DD4009F9DEB /* Helpers */,
 				CEC2059E210D0F9B0084430B /* Networking */,
 				CE38BC5D210435EC0036E9E5 /* UIViewController */,
 				CE6AC1B0210233E70001A4C3 /* UINavigationController */,
@@ -349,6 +354,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		CEE4F9C621841DD4009F9DEB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4F9C721841DEC009F9DEB /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CEFC893B2115F086004D56F3 /* Torrents */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +401,7 @@
 				CEF2E117211F628F0009B4D4 /* TorrentDetailTableViewCell.swift */,
 				CEF2E11B212525D70009B4D4 /* SimpleSectionHeader.xib */,
 				CEF2E11D212538750009B4D4 /* SimpleSectionHeader.swift */,
+				CEE4F9C42183E05E009F9DEB /* Top10TorrentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -516,6 +530,7 @@
 				CEBB0838211012620060DF20 /* ProfileViewModel.swift in Sources */,
 				CE3E74282116CF06006BD188 /* MusicGroupHeaderView.swift in Sources */,
 				CEC205A4210D635E0084430B /* RedApiClient.swift in Sources */,
+				CEE4F9C821841DEC009F9DEB /* Helpers.swift in Sources */,
 				CEBB0833211001820060DF20 /* GazelleIndex.swift in Sources */,
 				CEFC894421167612004D56F3 /* TorrentMusicGroupTableViewCell.swift in Sources */,
 				CEF2E118211F628F0009B4D4 /* TorrentDetailTableViewCell.swift in Sources */,
@@ -543,6 +558,7 @@
 				CE38BC5C2102A8C90036E9E5 /* LoginConstants.swift in Sources */,
 				CEF2E11221193B430009B4D4 /* AlbumGroupViewModel.swift in Sources */,
 				CEFC89422116755D004D56F3 /* TorrentsViewController.swift in Sources */,
+				CEE4F9C52183E05E009F9DEB /* Top10TorrentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
