@@ -13,7 +13,10 @@ class TorrentsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var stackView: UIStackView!
     
+    lazy var searchController = UISearchController(searchResultsController: nil)
     private enum TorrentSections: Int {
         case torrents = 0
         case top10 = 1
@@ -44,6 +47,7 @@ class TorrentsViewController: UIViewController {
     }
     
     private func requestTorrentsForSection(section: Int) {
+        hideSearchBar()
         switch section {
         case TorrentSections.torrents.rawValue:
             client.requestMusicTorrents { response in
@@ -60,9 +64,31 @@ class TorrentsViewController: UIViewController {
                 self.activityIndicator.stopIndicator()
             }
         case TorrentSections.search.rawValue:
-            print("TODO")
+            hideSearchBar(false)
         default:
             print("Section not defined in TorrentSections")
+        }
+    }
+    
+    private func hideSearchBar(_ shouldHide:Bool = true) {
+        if !searchBar.isHidden && shouldHide {
+            searchBar.isHidden.toggle()
+            shouldAnimate()
+        }
+        
+        if searchBar.isHidden && !shouldHide {
+            searchBar.isHidden.toggle()
+            shouldAnimate()
+        }
+    }
+    
+    private func shouldAnimate() {
+        self.view.endEditing(false)
+        
+        //initial animation is slightly bugged
+        //remove unwanted animations (cursor animates into place)
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
         }
     }
 }
