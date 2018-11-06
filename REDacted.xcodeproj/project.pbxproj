@@ -74,7 +74,7 @@
 		CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CEBB0832211001820060DF20 /* GazelleIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazelleIndex.swift; sourceTree = "<group>"; };
 		CEBB0834211006130060DF20 /* GazelleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazelleUser.swift; sourceTree = "<group>"; };
-		CEBB0837211012620060DF20 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewModel.swift; path = "/Users/maflores/Documents/Xcode/REDacted/REDacted/Modules/Profile/View Models/ProfileViewModel.swift"; sourceTree = "<absolute>"; };
+		CEBB0837211012620060DF20 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CEC2059C210D0B020084430B /* Annoucements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annoucements.swift; sourceTree = "<group>"; };
 		CEC2059F210D0FE70084430B /* BaseAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIResponse.swift; sourceTree = "<group>"; };
 		CEC205A1210D16980084430B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
