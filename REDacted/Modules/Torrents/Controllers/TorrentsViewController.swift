@@ -16,7 +16,7 @@ class TorrentsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var stackView: UIStackView!
     
-    lazy var searchController = UISearchController(searchResultsController: nil)
+    //var searchController = UISearchController(searchResultsController: nil)
     private enum TorrentSections: Int {
         case torrents = 0
         case top10 = 1
@@ -25,11 +25,13 @@ class TorrentsViewController: UIViewController {
     
     var groups: AlbumGroupViewModel?
     var top10Groups: [Top10TorrentViewModel]?
+    var searchGroups: AlbumGroupViewModel?
     
     let client = RedApiClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         activityIndicator.showIndicator(withMessage: "Loading Torrents")
         requestTorrentsForSection(section: TorrentSections.torrents.rawValue)
     }
@@ -51,14 +53,18 @@ class TorrentsViewController: UIViewController {
         switch section {
         case TorrentSections.torrents.rawValue:
             client.requestMusicTorrents { response in
-                guard let response = response else { return }
+                guard let response = response else {
+                    self.activityIndicator.stopIndicator()
+                    return }
                 self.groups = AlbumGroupViewModel.init(groups: response.results)
                 self.tableView.reloadData()
                 self.activityIndicator.stopIndicator()
             }
         case TorrentSections.top10.rawValue:
             client.requestTop10 { response in
-                guard let response = response else { return }
+                guard let response = response else {
+                    self.activityIndicator.stopIndicator()
+                    return }
                 self.top10Groups = response.compactMap({ Top10TorrentViewModel.init(top10Data: $0)})
                 self.tableView.reloadData()
                 self.activityIndicator.stopIndicator()
@@ -91,6 +97,19 @@ class TorrentsViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    private func searchForTorrents(withTerm text: String) {
+        searchBar.endEditing(false)
+        self.activityIndicator.showIndicator()
+        client.search(withTerm: text) { response in
+            guard let response = response else {
+                self.activityIndicator.stopIndicator()
+                return }
+            self.searchGroups = AlbumGroupViewModel.init(groups: response.results)
+            self.tableView.reloadData()
+            self.activityIndicator.stopIndicator()
+        }
+    }
 }
 
 extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -115,6 +134,11 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
         if segmentControl.selectedSegmentIndex == 1 {
             guard let count = top10Groups?[section].torrents.count else { return 0 }
             return count
+        }
+        
+        if segmentControl.selectedSegmentIndex == 2 {
+            guard let rows = searchGroups?.albums else { return 0 }
+            return rows.count
         }
         
         return 0
@@ -145,8 +169,18 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.torrentSize.text = album.size
             return cell
         case TorrentSections.search.rawValue:
-            print("hey where da search")
-            let cell = UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumGroup") as! AlbumGroupTableViewCell
+            guard let albums = searchGroups?.albums else { return cell }
+            let data = albums[indexPath.row]
+            
+            cell.artistName.text = data.artistName
+            cell.albumName.text = data.albumName
+            cell.releaseType.text = data.releaseType
+            if data.cover.isEmpty {
+                cell.albumCover.image = UIImage(imageLiteralResourceName: "ic_missing_artwork")
+            } else {
+                cell.albumCover.af_setImage(withURL: URL(string: data.cover)!, placeholderImage: UIImage(imageLiteralResourceName: "ic_missing_artwork"))
+            }
             return cell
         default:
             let cell = UITableViewCell()
@@ -173,19 +207,19 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-//        if segmentControl.selectedSegmentIndex == 1 {
-//            guard let album = self.top10Groups?[indexPath.section].torrents[indexPath.row] else { return }
-//            if let controller = storyboard?.instantiateViewController(withIdentifier: "TorrentGroupDetail") as? TorrentGroupDetailViewController {
-//                self.activityIndicator.navigationBar.isHidden = false
-//                controller.groupId = album.id
-//                let backButton = UIBarButtonItem()
-//                backButton.title = "Torrents"
-//                activityIndicator.navigationBar.topItem?.backBarButtonItem = backButton
-//                controller.navigationController?.title = "Torrent Detail"
-//                self.navigationController?.pushViewController(controller, animated: true)
-//                
-//            }
-//        }
+        if segmentControl.selectedSegmentIndex == 2 {
+            guard let albums = self.searchGroups?.albums else { return }
+            if let controller = storyboard?.instantiateViewController(withIdentifier: "TorrentGroupDetail") as? TorrentGroupDetailViewController {
+                self.activityIndicator.navigationBar.isHidden = false
+                controller.groupId = albums[indexPath.row].id
+                let backButton = UIBarButtonItem()
+                backButton.title = "Torrents"
+                activityIndicator.navigationBar.topItem?.backBarButtonItem = backButton
+                controller.navigationController?.title = "Torrent Detail"
+                self.navigationController?.pushViewController(controller, animated: true)
+                
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -204,6 +238,15 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
             return 44
         } else {
             return 0
+        }
+    }
+}
+
+extension TorrentsViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text, !searchText.isEmpty {
+            print("Search term: \(searchText)")
+            searchForTorrents(withTerm: searchText)
         }
     }
 }

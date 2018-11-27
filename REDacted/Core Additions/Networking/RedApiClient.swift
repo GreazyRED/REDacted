@@ -16,6 +16,7 @@ class RedApiClient {
     private let browseTorrents = "ajax.php?action=browse&filter_cat[1]=1"
     private let torrentGroupDetail = "ajax.php?action=torrentgroup&id="
     private let top10 = "ajax.php?action=top10"
+    private let search = "ajax.php?action=browse&searchstr="
     
     func requestAnnoucements(_ completionHandler: @escaping (GazelleAnnouncements?) -> ()) {
         NetworkManager.get(getFullURL(announcements), headers: nil) { (result:
@@ -52,6 +53,12 @@ class RedApiClient {
     
     func requestTop10(_ completionHandler: @escaping ([TorrentTop10]?) -> ()) {
         NetworkManager.get(getFullURL(top10), headers: nil) { (result: NetworkManager.Result<BaseAPIResponse<[TorrentTop10]>>) in
+            self.wrappedNetworkResponseResult(result: result, completionHandler: completionHandler)
+        }
+    }
+    
+    func search(withTerm: String, completionHandler: @escaping (GazelleBrowse?) -> ()) {
+        NetworkManager.get(getFullURL(search+"\(withTerm.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)"), headers: nil) { (result: NetworkManager.Result<BaseAPIResponse<GazelleBrowse>>) in
             self.wrappedNetworkResponseResult(result: result, completionHandler: completionHandler)
         }
     }
