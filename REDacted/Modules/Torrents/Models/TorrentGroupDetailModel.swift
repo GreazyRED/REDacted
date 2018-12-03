@@ -74,3 +74,13 @@ struct Torrent: Codable {
     let userId: Int
     let username: String
 }
+
+struct AutoComplete: Codable {
+    let query: String
+    let suggestions: [AutoCompleteSuggestion]
+}
+
+struct AutoCompleteSuggestion: Codable {
+    let value: String
+    let data: String
+}

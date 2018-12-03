@@ -24,6 +24,7 @@
 		CE3E74282116CF06006BD188 /* MusicGroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3E74272116CF06006BD188 /* MusicGroupHeaderView.swift */; };
 		CE6AC1B22102342B0001A4C3 /* RedactedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AC1B12102342B0001A4C3 /* RedactedNavigationController.swift */; };
 		CE903297211689BD006AA7AC /* MusicTorrentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE903296211689BD006AA7AC /* MusicTorrentsViewModel.swift */; };
+		CE95840B21B4AB4A00B96E1C /* AutoCompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95840A21B4AB4A00B96E1C /* AutoCompleteViewModel.swift */; };
 		CEBB082D210FF8030060DF20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB082C210FF8030060DF20 /* ProfileViewController.swift */; };
 		CEBB0831210FFE490060DF20 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */; };
 		CEBB0833211001820060DF20 /* GazelleIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBB0832211001820060DF20 /* GazelleIndex.swift */; };
@@ -70,6 +71,7 @@
 		CE3E74272116CF06006BD188 /* MusicGroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicGroupHeaderView.swift; sourceTree = "<group>"; };
 		CE6AC1B12102342B0001A4C3 /* RedactedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedNavigationController.swift; sourceTree = "<group>"; };
 		CE903296211689BD006AA7AC /* MusicTorrentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTorrentsViewModel.swift; sourceTree = "<group>"; };
+		CE95840A21B4AB4A00B96E1C /* AutoCompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteViewModel.swift; sourceTree = "<group>"; };
 		CEBB082C210FF8030060DF20 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CEBB0830210FFE490060DF20 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CEBB0832211001820060DF20 /* GazelleIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GazelleIndex.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				CEF2E11121193B430009B4D4 /* AlbumGroupViewModel.swift */,
 				CEF2E119211F66F40009B4D4 /* TorrentDetailViewModel.swift */,
 				CE3B7E3021782DD20008C893 /* Top10TorrentViewModel.swift */,
+				CE95840A21B4AB4A00B96E1C /* AutoCompleteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				CEFC8940211661F5004D56F3 /* TorrentModels.swift in Sources */,
 				CEF2E116211F3C800009B4D4 /* TorrentGroupDetailModel.swift in Sources */,
 				CEF2E114211E74230009B4D4 /* TorrentGroupDetailViewController.swift in Sources */,
+				CE95840B21B4AB4A00B96E1C /* AutoCompleteViewModel.swift in Sources */,
 				CEF2E11A211F66F40009B4D4 /* TorrentDetailViewModel.swift in Sources */,
 				CEBB0835211006130060DF20 /* GazelleUser.swift in Sources */,
 				CEC205A0210D0FE70084430B /* BaseAPIResponse.swift in Sources */,

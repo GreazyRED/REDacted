@@ -15,6 +15,7 @@ class TorrentsViewController: UIViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var stackView: UIStackView!
+    var willDisplayAutoCompleteResults: Bool = false
     
     //var searchController = UISearchController(searchResultsController: nil)
     private enum TorrentSections: Int {
@@ -26,7 +27,7 @@ class TorrentsViewController: UIViewController {
     var groups: AlbumGroupViewModel?
     var top10Groups: [Top10TorrentViewModel]?
     var searchGroups: AlbumGroupViewModel?
-    
+    //var autoCompleteGroups: AutoCompleteViewModel?
     let client = RedApiClient()
     
     override func viewDidLoad() {
@@ -137,6 +138,10 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         if segmentControl.selectedSegmentIndex == 2 {
+//            if willDisplayAutoCompleteResults {
+//                guard let rows = autoCompleteGroups?.results else { return 0 }
+//                return rows.count
+//            }
             guard let rows = searchGroups?.albums else { return 0 }
             return rows.count
         }
@@ -169,19 +174,26 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.torrentSize.text = album.size
             return cell
         case TorrentSections.search.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumGroup") as! AlbumGroupTableViewCell
-            guard let albums = searchGroups?.albums else { return cell }
-            let data = albums[indexPath.row]
-            
-            cell.artistName.text = data.artistName
-            cell.albumName.text = data.albumName
-            cell.releaseType.text = data.releaseType
-            if data.cover.isEmpty {
-                cell.albumCover.image = UIImage(imageLiteralResourceName: "ic_missing_artwork")
-            } else {
-                cell.albumCover.af_setImage(withURL: URL(string: data.cover)!, placeholderImage: UIImage(imageLiteralResourceName: "ic_missing_artwork"))
-            }
-            return cell
+//            if willDisplayAutoCompleteResults {
+//                let cell = UITableViewCell()
+//                guard let autoCompleteResults = autoCompleteGroups?.results else { return cell }
+//                cell.textLabel!.text = autoCompleteResults[indexPath.row]
+//                return cell
+//            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumGroup") as! AlbumGroupTableViewCell
+                guard let albums = searchGroups?.albums else { return cell }
+                let data = albums[indexPath.row]
+                
+                cell.artistName.text = data.artistName
+                cell.albumName.text = data.albumName
+                cell.releaseType.text = data.releaseType
+                if data.cover.isEmpty {
+                    cell.albumCover.image = UIImage(imageLiteralResourceName: "ic_missing_artwork")
+                } else {
+                    cell.albumCover.af_setImage(withURL: URL(string: data.cover)!, placeholderImage: UIImage(imageLiteralResourceName: "ic_missing_artwork"))
+                }
+                return cell
+            //}
         default:
             let cell = UITableViewCell()
             return cell
@@ -189,6 +201,9 @@ extension TorrentsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if willDisplayAutoCompleteResults {
+//            return 44
+//        }
         return 88
     }
     
@@ -248,5 +263,29 @@ extension TorrentsViewController: UISearchBarDelegate {
             print("Search term: \(searchText)")
             searchForTorrents(withTerm: searchText)
         }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        //willDisplayAutoCompleteResults = false
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            //willDisplayAutoCompleteResults = false
+            tableView.reloadData()
+            return
+        }
+        
+        //This autocomplete is only good if the search feature is its on its own
+        //The current setup contains too many features compiled into a single view
+        
+//        client.autoComplete(withTerm: searchText) { response in
+//            if let response = response {
+//                self.willDisplayAutoCompleteResults = true
+//                self.autoCompleteGroups = AutoCompleteViewModel.init(autoCompleteResults: response.suggestions)
+//                self.tableView.reloadData()
+//            }
+//        }
     }
 }

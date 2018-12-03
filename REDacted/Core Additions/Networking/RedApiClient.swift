@@ -17,6 +17,7 @@ class RedApiClient {
     private let torrentGroupDetail = "ajax.php?action=torrentgroup&id="
     private let top10 = "ajax.php?action=top10"
     private let search = "ajax.php?action=browse&searchstr="
+    private let autoComplete = "artist.php?action=autocomplete&query="
     
     func requestAnnoucements(_ completionHandler: @escaping (GazelleAnnouncements?) -> ()) {
         NetworkManager.get(getFullURL(announcements), headers: nil) { (result:
@@ -63,6 +64,12 @@ class RedApiClient {
         }
     }
     
+    func autoComplete(withTerm: String, completionHandler: @escaping (AutoComplete?) -> ()) {
+        NetworkManager.post(getFullURL(autoComplete+"\(withTerm.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!)"), headers: nil) { (result: NetworkManager.Result<AutoComplete>) in
+            self.unwrappedNetworkResponseResult(result: result, completionHandler: completionHandler)
+        }
+    }
+    
     
     private func getFullURL(_ string: String) -> String {
         return "\(baseURL)\(string)"
@@ -72,6 +79,15 @@ class RedApiClient {
         switch result {
         case .success(let data):
             self.unwrapAndCallCompletionHandler(wrappedResponse: data, completionHandler: completionHandler)
+        case .failure:
+            print("error")
+        }
+    }
+    
+    private func unwrappedNetworkResponseResult<T>(result: NetworkManager.Result<T>, completionHandler: @escaping(T?) -> ()) {
+        switch result {
+        case .success(let data):
+            completionHandler(data)
         case .failure:
             print("error")
         }
